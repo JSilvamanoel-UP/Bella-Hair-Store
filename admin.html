@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administração | Bella Hair Store</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="js/produtos.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <a class="logo" href="index.html">BELLA <span>HAIR STORE</span></a>
+    <div class="admin-header-actions">
+      <a class="admin-voltar" href="index.html">← Voltar à loja</a>
+      <button id="sairAdmin" class="admin-sair" hidden>Sair</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="login-admin" id="loginAdmin">
+      <div class="login-card">
+        <span class="login-simbolo">BH</span>
+        <p class="sobretitulo">ÁREA RESTRITA · DEMONSTRAÇÃO</p>
+        <h1>Acesso do administrador</h1>
+        <p>Entre para gerenciar os produtos da Bella Hair Store.</p>
+        <form id="formLoginAdmin">
+          <label for="senhaAdmin">Senha de demonstração</label>
+          <input id="senhaAdmin" type="password" placeholder="Digite a senha" required>
+          <button class="botao" type="submit">Entrar no painel</button>
+          <p id="erroLogin" class="admin-feedback erro" aria-live="polite"></p>
+        </form>
+        <small>Senha demonstrativa: <strong>bella2026</strong></small>
+      </div>
+    </section>
+
+    <section id="painelAdmin" hidden>
+      <div class="admin-boasvindas">
+        <div><p class="sobretitulo">PAINEL DE CONTROLE</p><h1>Administração</h1><p>Gerencie o catálogo de produtos da sua loja.</p></div>
+        <a href="index.html" class="botao botao-outline">Visualizar loja</a>
+      </div>
+
+      <div class="admin-stats">
+        <article class="stat-card"><span>Produtos cadastrados</span><strong id="totalProdutos">0</strong></article>
+        <article class="stat-card"><span>Em promoção</span><strong id="totalPromocoes">0</strong></article>
+        <article class="stat-card"><span>Marcas no catálogo</span><strong id="totalMarcas">0</strong></article>
+      </div>
+
+      <div class="admin-layout">
+        <section class="admin-card editor-card">
+          <div class="admin-card-title"><div><p class="sobretitulo">CATÁLOGO</p><h2 id="tituloFormulario">Adicionar produto</h2></div></div>
+          <form id="formProduto" class="form-produto">
+            <input type="hidden" id="produtoId">
+            <label>Nome do produto<input id="produtoNome" type="text" maxlength="90" required placeholder="Ex.: Shampoo Hidratante"></label>
+            <div class="form-duplo">
+              <label>Marca<input id="produtoMarca" type="text" maxlength="60" required placeholder="Ex.: Ybera"></label>
+              <label>Categoria<select id="produtoCategoria" required><option value="">Selecione</option><option>Shampoo</option><option>Condicionador</option><option>Máscara</option><option>Finalizador</option></select></label>
+            </div>
+            <label>Descrição<textarea id="produtoDescricao" rows="3" maxlength="220" required placeholder="Descreva o produto"></textarea></label>
+            <div class="form-duplo">
+              <label>Preço (R$)<input id="produtoPreco" type="number" min="0.01" step="0.01" required placeholder="89.90"></label>
+              <label>Endereço da imagem<input id="produtoImagem" type="url" placeholder="https://..."></label>
+            </div>
+            <label class="check-promocao"><input id="produtoPromocao" type="checkbox"> Destacar como promoção</label>
+            <div class="form-botoes"><button class="botao" type="submit" id="salvarProduto">Salvar produto</button><button class="botao-secundario" type="button" id="cancelarEdicao" hidden>Cancelar edição</button></div>
+            <p id="retornoProduto" class="admin-feedback" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <section class="admin-card lista-card">
+          <div class="admin-lista-topo"><div><p class="sobretitulo">SEUS ITENS</p><h2>Produtos cadastrados</h2></div><input type="search" id="buscaAdmin" placeholder="Buscar produto..."></div>
+          <div class="tabela-wrapper">
+            <table class="tabela-admin">
+              <thead><tr><th>Produto</th><th>Marca</th><th>Categoria</th><th>Preço</th><th>Ações</th></tr></thead>
+              <tbody id="tabelaProdutos"></tbody>
+            </table>
+          </div>
+          <p id="listaVazia" class="lista-vazia" hidden>Nenhum produto encontrado.</p>
+        </section>
+      </div>
+      <div class="aviso-admin"><strong>Importante:</strong> esta é uma área administrativa demonstrativa de Front-end. Os dados são salvos somente no navegador (LocalStorage), não existe autenticação segura nem banco de dados conectado.</div>
+    </section>
+  </main>
+  <footer class="rodape"><a class="logo logo-rodape" href="index.html">BELLA <span>HAIR STORE</span></a><p>Painel administrativo demonstrativo.</p></footer>
+  <div class="toast" id="toastAdmin" role="status" aria-live="polite"></div>
+</body>
+</html>
