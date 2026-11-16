@@ -1,113 +1,149 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bella Hair Store: produtos selecionados para cuidar dos seus cabelos.">
-  <title>Bella Hair Store | Beleza e cuidado</title>
-  <link rel="stylesheet" href="css/estilo.css">
-  <script src="js/produtos.js" defer></script>
-  <script src="js/script.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella Hair Store | Cuidados Capilares</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilo.css" />
 </head>
 <body>
-  <div class="topbar">CUIDADO, BELEZA E AUTOESTIMA EM UM SÓ LUGAR</div>
-  <header class="cabecalho">
-    <a class="logo" href="#inicio">BELLA <span>HAIR STORE</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
-    <nav class="menu" id="menu">
-      <a href="#inicio">Início</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#categorias">Categorias</a>
-      <a href="#promocoes">Promoções</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <button class="carrinho-atalho" id="abrirCarrinho" aria-label="Abrir carrinho">
-      Carrinho <span id="contadorCarrinho">0</span>
-    </button>
+  <div class="top-bar">
+    Frete grátis em compras acima de R$ 199,00 • Parcele em até 6x sem juros
+  </div>
+
+  <header class="header">
+    <div class="container header-content">
+      <a href="#" class="logo">Bella <span>Hair Store</span></a>
+
+      <nav class="nav">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#beneficios">Diferenciais</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-box">
+          <input type="text" id="campo-busca" placeholder="Buscar produto..." aria-label="Buscar produto" />
+        </div>
+        <button class="btn-carrinho" id="abrir-carrinho" aria-label="Abrir sacola">
+          Sacola <span class="badge-contador" id="contador-carrinho">0</span>
+        </button>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="hero-texto">
-        <p class="sobretitulo">SUA ROTINA DE AUTOCUIDADO COMEÇA AQUI</p>
-        <h1>Cabelos incríveis começam com <em>bons cuidados.</em></h1>
-        <p>Encontre produtos para valorizar a beleza dos seus fios em todas as etapas da sua rotina.</p>
-        <a class="botao" href="#produtos">Conheça os produtos</a>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-texto">
+          <span class="tag-destaque">Nova Coleção Botânica</span>
+          <h1>Tratamento de salão com <em>leveza e brilho</em> todos os dias.</h1>
+          <p>
+            Fórmulas ricas em óleos vegetais, aminoácidos e ativos reparadores para devolver força, maciez e movimento natural aos seus fios.
+          </p>
+          <div class="hero-botoes">
+            <a href="#catalogo" class="btn-primario">Explorar produtos</a>
+            <a href="#beneficios" class="btn-secundario">Conhecer fórmulas</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <span class="hero-card-selo">Mais Vendido</span>
+            <h3>Elixir Reparador Ouro Argan</h3>
+            <p>Proteção térmica de até 230°C, controle imediato de frizz e acabamento acetinado sem pesar.</p>
+            <div class="hero-card-rodape">
+              <strong>R$ 89,90</strong>
+              <button class="btn-primario btn-sm" onclick="adicionarAoCarrinho(1)">Adicionar</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="hero-imagem" role="img" aria-label="Produtos para cuidados capilares"></div>
     </section>
 
-    <section class="faixa-beneficios">
-      <div><strong>♡</strong><span>Beleza e autocuidado</span></div>
-      <div><strong>✧</strong><span>Produtos selecionados</span></div>
-      <div><strong>✓</strong><span>Compra demonstrativa</span></div>
-    </section>
+    <section id="catalogo" class="catalogo container">
+      <div class="catalogo-topo">
+        <div>
+          <h2>Nossa Coleção</h2>
+          <p class="subtitulo">Escolha o tratamento ideal para a necessidade atual do seu cabelo.</p>
+        </div>
 
-    <section class="secao" id="categorias">
-      <div class="cabecalho-secao">
-        <div><p class="sobretitulo">ENCONTRE O QUE PRECISA</p><h2>Explore por categoria</h2></div>
-      </div>
-      <div class="categorias" id="listaCategorias">
-        <button class="categoria-card" data-categoria="Shampoo"><span>01</span><b>Shampoos</b><small>Limpeza e cuidado</small></button>
-        <button class="categoria-card" data-categoria="Condicionador"><span>02</span><b>Condicionadores</b><small>Maciez e hidratação</small></button>
-        <button class="categoria-card" data-categoria="Máscara"><span>03</span><b>Máscaras</b><small>Tratamento intensivo</small></button>
-        <button class="categoria-card" data-categoria="Finalizador"><span>04</span><b>Finalizadores</b><small>Proteção e acabamento</small></button>
-      </div>
-    </section>
+        <div class="controles-catalogo">
+          <div class="filtros" id="filtros-categoria">
+            <button class="filtro-btn ativo" data-categoria="Todos">Todos</button>
+            <button class="filtro-btn" data-categoria="Hidratação">Hidratação</button>
+            <button class="filtro-btn" data-categoria="Nutrição">Nutrição</button>
+            <button class="filtro-btn" data-categoria="Reconstrução">Reconstrução</button>
+            <button class="filtro-btn" data-categoria="Finalizadores">Finalizadores</button>
+          </div>
 
-    <section class="secao secao-produtos" id="produtos">
-      <div class="cabecalho-secao">
-        <div><p class="sobretitulo">ESCOLHAS PARA SEUS FIOS</p><h2>Nossos produtos</h2></div>
-        <div class="filtros">
-          <input type="search" id="campoBusca" placeholder="Buscar produto..." aria-label="Buscar produto">
-          <select id="filtroCategoria" aria-label="Filtrar por categoria">
-            <option value="Todos">Todas as categorias</option>
-            <option>Shampoo</option><option>Condicionador</option><option>Máscara</option><option>Finalizador</option>
+          <select id="ordenar-produtos" class="select-ordenar" aria-label="Ordenar produtos">
+            <option value="destaque">Destaques</option>
+            <option value="menor-preco">Menor preço</option>
+            <option value="maior-preco">Maior preço</option>
           </select>
         </div>
       </div>
-      <div class="grade-produtos" id="gradeProdutos"></div>
-      <p class="mensagem-vazia" id="mensagemVazia" hidden>Nenhum produto encontrado. Tente outra busca.</p>
+
+      <div class="grid-produtos" id="lista-produtos"></div>
     </section>
 
-    <section class="banner-promocao" id="promocoes">
-      <div><p class="sobretitulo">SELEÇÃO ESPECIAL</p><h2>Seu cabelo merece esse cuidado.</h2><p>Confira os produtos em destaque e aproveite os preços demonstrativos da loja.</p></div>
-      <a class="botao botao-claro" href="#produtos" id="verPromocoes">Ver ofertas</a>
-    </section>
-
-    <section class="secao sobre" id="sobre">
-      <div class="sobre-foto"></div>
-      <div><p class="sobretitulo">QUEM SOMOS</p><h2>Um espaço dedicado à beleza dos seus cabelos.</h2>
-        <p>A Bella Hair Store é uma loja demonstrativa criada para apresentar produtos capilares e facilitar a descoberta de opções para diferentes rotinas de cuidado.</p>
-        <p>Trabalhamos com uma seleção ilustrativa de produtos de diferentes marcas, incluindo itens da Ybera. A identidade visual da loja é própria e independente.</p>
+    <section id="beneficios" class="beneficios">
+      <div class="container grid-beneficios">
+        <div class="beneficio-item">
+          <span class="beneficio-num">01</span>
+          <h3>Ativos Limpos</h3>
+          <p>Livre de parabenos, petrolatos e sulfatos agressivos para preservar a saúde do couro cabeludo.</p>
+        </div>
+        <div class="beneficio-item">
+          <span class="beneficio-num">02</span>
+          <h3>Cruelty-Free</h3>
+          <p>Desenvolvimento ético sem testes em animais e com embalagens 100% recicláveis.</p>
+        </div>
+        <div class="beneficio-item">
+          <span class="beneficio-num">03</span>
+          <h3>Alta Performance</h3>
+          <p>Tecnologia de liberação prolongada que mantém os fios alinhados por até 72 horas.</p>
+        </div>
       </div>
-    </section>
-
-    <section class="secao contato" id="contato">
-      <div><p class="sobretitulo">FALE COM A BELLA</p><h2>Vamos conversar?</h2><p>Envie sua dúvida ou mensagem pelo formulário demonstrativo.</p></div>
-      <form id="formContato" class="form-contato">
-        <label>Seu nome<input type="text" id="nomeContato" required placeholder="Digite seu nome"></label>
-        <label>Seu e-mail<input type="email" id="emailContato" required placeholder="voce@email.com"></label>
-        <label>Mensagem<textarea id="mensagemContato" rows="4" required placeholder="Como podemos ajudar?"></textarea></label>
-        <button class="botao" type="submit">Enviar mensagem</button>
-        <p id="retornoContato" class="retorno" aria-live="polite"></p>
-      </form>
     </section>
   </main>
 
-  <footer class="rodape">
-    <a class="logo logo-rodape" href="#inicio">BELLA <span>HAIR STORE</span></a>
-    <p>© <span id="anoAtual"></span> Bella Hair Store. Todos os direitos reservados.</p>
+  <footer id="sobre" class="footer">
+    <div class="container footer-content">
+      <div>
+        <a href="#" class="logo">Bella <span>Hair Store</span></a>
+        <p>Cuidado capilar contemporâneo pensado para realçar a beleza natural de cada textura.</p>
+      </div>
+      <p class="copyright">© 2026 Bella Hair Store. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
-  <div class="fundo-modal" id="fundoModal" hidden>
-    <aside class="painel-carrinho" role="dialog" aria-modal="true" aria-labelledby="tituloCarrinho">
-      <div class="topo-carrinho"><h2 id="tituloCarrinho">Seu carrinho</h2><button id="fecharCarrinho" class="fechar" aria-label="Fechar">×</button></div>
-      <div id="itensCarrinho" class="itens-carrinho"></div>
-      <div class="resumo-carrinho"><p>Total <strong id="totalCarrinho">R$ 0,00</strong></p><button id="finalizarCompra" class="botao botao-cheio">Finalizar demonstração</button><small>Esta versão é apenas demonstrativa e não realiza pagamentos.</small></div>
-    </aside>
-  </div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- Gaveta Lateral do Carrinho -->
+  <div class="overlay" id="overlay-carrinho"></div>
+  <aside class="carrinho-drawer" id="carrinho-drawer" aria-label="Sacola de compras">
+    <div class="carrinho-topo">
+      <h3>Sua Sacola</h3>
+      <button class="btn-fechar" id="fechar-carrinho" aria-label="Fechar sacola">&times;</button>
+    </div>
+
+    <div class="carrinho-itens" id="itens-carrinho"></div>
+
+    <div class="carrinho-rodape">
+      <div class="linha-total">
+        <span>Subtotal</span>
+        <strong id="subtotal-carrinho">R$ 0,00</strong>
+      </div>
+      <button class="btn-primario btn-full" id="finalizar-pedido">Finalizar Compra</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast">Produto adicionado à sacola!</div>
+
+  <script src="js/produtos.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
