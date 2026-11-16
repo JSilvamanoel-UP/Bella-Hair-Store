@@ -1,0 +1,34 @@
+BELLA HAIR STORE — PROJETO FRONT-END
+
+COMO ABRIR
+1. Extraia a pasta bella-hair-store do arquivo ZIP.
+2. Abra o Visual Studio Code.
+3. Clique em Arquivo > Abrir Pasta.
+4. Selecione a pasta bella-hair-store.
+5. Abra o arquivo index.html.
+6. Clique com o botão direito no arquivo e escolha "Open with Live Server", se a extensão Live Server estiver instalada.
+   Alternativa: abra o index.html diretamente no navegador.
+
+ARQUIVOS
+- index.html: estrutura e conteúdo do site.
+- css/estilo.css: aparência, cores e responsividade.
+- js/produtos.js: catálogo de produtos. Edite este arquivo para cadastrar produtos.
+- js/script.js: busca, filtros, menu e carrinho.
+- imagens/: pasta para imagens locais, se desejar substituir as imagens de demonstração.
+
+FUNCIONALIDADES
+- Navegação por seções (Início, Produtos, Categorias, Promoções, Sobre e Contato).
+- Busca e filtro por categoria.
+- Produtos carregados a partir do arquivo JavaScript.
+- Carrinho com quantidade, remoção e total.
+- Carrinho salvo no LocalStorage do navegador.
+- Formulário de contato demonstrativo.
+- Layout responsivo para computador e celular.
+
+IMPORTANTE PARA A FACULDADE
+Esta versão é exclusivamente Front-end. Os produtos vêm de um arquivo JavaScript e o carrinho usa LocalStorage.
+Ela NÃO possui PHP, banco de dados MySQL, painel administrativo, autenticação, processamento de pagamentos ou DER implementado no banco.
+Se a rubrica exigir especificamente PHP, banco de dados e relacionamento muitos-para-muitos, esta versão sozinha não atende a esses requisitos. Confirme com o professor se a mudança para Front-end foi autorizada.
+
+OBSERVAÇÃO
+Os nomes, preços e imagens são dados ilustrativos para demonstração. Confirme informações, disponibilidade e autorização de uso das imagens antes de publicar a loja.
