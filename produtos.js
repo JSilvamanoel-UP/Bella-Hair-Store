@@ -1,0 +1,11 @@
+// Catálogo demonstrativo. Edite este arquivo para adicionar ou alterar produtos.
+const produtos = [
+  {id:1,nome:"Shampoo Hidratante",marca:"Ybera",categoria:"Shampoo",descricao:"Limpeza suave para uma rotina de cuidado.",preco:89.90,promocao:true,imagem:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"},
+  {id:2,nome:"Condicionador Nutritivo",marca:"Ybera",categoria:"Condicionador",descricao:"Ajuda a deixar os fios macios e fáceis de pentear.",preco:79.90,promocao:false,imagem:"https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80"},
+  {id:3,nome:"Máscara de Tratamento",marca:"Bella Selection",categoria:"Máscara",descricao:"Tratamento cosmético para os cuidados semanais.",preco:99.90,promocao:true,imagem:"https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=700&q=80"},
+  {id:4,nome:"Óleo Finalizador",marca:"Ybera",categoria:"Finalizador",descricao:"Finalização e brilho para os cabelos.",preco:69.90,promocao:false,imagem:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"},
+  {id:5,nome:"Shampoo Reconstrutor",marca:"Bella Selection",categoria:"Shampoo",descricao:"Opção para complementar sua rotina capilar.",preco:74.90,promocao:false,imagem:"https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80"},
+  {id:6,nome:"Máscara Nutrição",marca:"Ybera",categoria:"Máscara",descricao:"Cuidado intensivo para os momentos de tratamento.",preco:119.90,promocao:true,imagem:"https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=700&q=80"},
+  {id:7,nome:"Leave-in Protetor",marca:"Bella Selection",categoria:"Finalizador",descricao:"Ajuda a proteger e alinhar os fios no dia a dia.",preco:59.90,promocao:false,imagem:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=80"},
+  {id:8,nome:"Condicionador Suave",marca:"Bella Selection",categoria:"Condicionador",descricao:"Finaliza a lavagem com toque macio.",preco:64.90,promocao:true,imagem:"https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80"}
+];
